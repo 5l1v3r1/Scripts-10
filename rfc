@@ -2,7 +2,7 @@
 ################################################################################
 # Title:   rfc                                                                 #
 # Author:  Spacecow                                                            #
-# License: GPLv3                                                               #
+# License: MIT                                                                 #
 # Date:    19/10/14                                                            #
 # Description:                                                                 #
 #   Manage a local mirror of RFCs from rfc-editor.org using rsync.             #
