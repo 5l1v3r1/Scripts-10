@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-# Welcome to the thoughtbot laptop script!
-# Be prepared to turn your laptop (or desktop, no haters here)
-# into an awesome development machine.
+#  Custom OSX Setup script (fork of thoughtbot/laptop).
+#  Turn your OSX install in to MY perfect development machine.
+#  Feel free to fork and customize for your own preferences.
 
 fancy_echo() {
   printf "\n%b\n" "$1"
