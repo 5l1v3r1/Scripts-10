@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################################################
-# Title:   RFC                                                                 #
+# Title:   rfc                                                                 #
 # Author:  Spacecow                                                            #
 # License: GPLv3                                                               #
 # Date:    19/10/14                                                            #
@@ -20,7 +20,7 @@ function update_rfcs() {
   rsync -avz --delete ftp.rfc-editor.org::rfcs-text-only "$RFC_STORAGE"
 
   if [ $? -ne 0 ]; then
-    echo "$0: RFC update error: update finished with error-code $?" 1>&2
+    echo "[  FAIL  ]  Could not update mirror." 1>&2
     exit 2
   else
     echo "[   OK   ]  RFC update was successfull."
@@ -29,7 +29,18 @@ function update_rfcs() {
 
 
 function search_rfcs(RFC) {
-  false
+  if $(echo $RFC | grep '^[0-9]+$'); then
+    MATCH="rfc$RFC.txt"
+    for FILE in $RFC_STORAGE/*; do  # This looks pretty nasty, should fix that.
+      if [ "${FILE}" = "$MATCH" ]; then
+        less "$RFC_STORAGE/${FILE}"
+      fi
+    done
+  else
+    echo "$0: Argument error: RFC number must only be digits." 1>&2
+    echo "Usage: $0 [--help] [--update] [number]"
+    exit 3
+  fi
 }
 
 
@@ -53,12 +64,19 @@ if [ -z "$RFC_STORAGE" ]; then  # Create our initial local copy
 fi
 
 
-if [ "$1" = '--help' -o "$2" = '--help' ]; then
-  echo "Usage: $0 [--help] [--update] [number]"
-  exit 0
-  
-elif [ "$1" = '--update' -o "$2" = '--update' ]; then
-  updates_rfcs
-fi
+for ARG in {1..$#}; do
+  case $@[${ARG}] in
+    '--help')
+      echo "Usage: $0 [--help] [--update] [number]"
+      exit 0
+      ;;
 
-search_rfcs $(echo "$*" | sed s/--update// | awk 'print $1')
+    '--update')
+      update_rfcs
+      ;;
+
+    *)
+      search_rfcs $@[${ARG}]
+      ;;
+  esac
+done
