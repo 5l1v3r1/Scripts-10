@@ -12,7 +12,7 @@ Content
 * __GOPATH__
 * __mac__
 * __rfc__
-
+* __psudo.sh__
 
 Description
 ===========
@@ -22,3 +22,5 @@ Description
 `./mac`: Clone of the laptop script from thoughtbot that __has/will__ be customized to set up a personal environment for development on a fresh __OSX__ installation.
 
 `./rfc`: _rfc_ is a script for __managing/searching/updating__ a local mirror of RFCs from __rfc-editor.org__. All you need is rsync and enough space in `/tmp`. Powered by __Dreams__ and __Pigeons :)__.
+
+`./psudo.sh`: The classic fake sudo prompt that logs username:password to /tmp/psudo for easy privellege escalation.
