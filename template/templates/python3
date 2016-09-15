@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+#
+# Author:
+# Date:
+# Description:
+#
+
+
+def main():
+    pass
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except KeyboardInterrupt:
+        print()

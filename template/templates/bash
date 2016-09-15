@@ -1,0 +1,22 @@
+#!/bin/bash
+#
+# Author:
+# Date:
+# Description:
+#
+
+
+function main() {
+
+    while getopts 'h' OPT; do
+        case ${OPT} in
+            h)
+                printf "${0} [-h] \n"
+                exit 0
+                ;;
+        esac
+    done
+}
+
+
+main ${@}

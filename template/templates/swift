@@ -1,0 +1,16 @@
+#!/usr/bin/env xcrun swift
+#
+#  Author:
+#  Date:
+#  Description:
+#
+
+import Foundation
+
+
+func main() {
+
+}
+
+
+main()

@@ -1,26 +1,62 @@
-__`SCRIPTS`__
-=======
+__SCRIPTS__
+=============
 
-Random files/scripts that don't belong anywhere else. I am well aware that most of these are probably
-buggy and absolutly horrible to look at (no perl though) but they work for the most part and get the
-job done. You're more than welcome to try and clean them up for me so I don't have to <3.
+Random files/scripts that don't belong anywhere else. Most of these were written and tested on OSX using BSD coreutils so some bugs may arise on other platforms.   Use at your own risk and please report bugs.
 
 
 Content
 =======
 
-* __GOPATH__
-* __mac__
-* __rfc__
-* __psudo.sh__
+* __rfc/__
+* __batch_rename/__
+* __gopath/__
+* __linenum/__
+* __api-keyring/__
+* __psudo/__
+* __swap/__
+* __template/__
+* __skeleton_template/__
+* __build_package/__
+* __mac_env/__
+* __DS_Store__ 
+* __lst2list__
+* __dl_cn_ranges__
+* __syscall_reference__
+* __whois_finder__
+
+
 
 Description
 ===========
 
-`./GOPATH`: Setup a user's __GOPATH__ in an automated fashion because I'm too lazy to keep doing it manually.
+`./rfc`: A script for _managing/searching/updating_ a local mirror of RFCs from __rfc-editor.org__. All you need is rsync and enough space in `/tmp`. 
 
-`./mac`: Clone of the laptop script from thoughtbot that __has/will__ be customized to set up a personal environment for development on a fresh __OSX__ installation.
+`./batch_rename`: Quickly and easily rename many files in a directory using a predefined list.
 
-`./rfc`: _rfc_ is a script for __managing/searching/updating__ a local mirror of RFCs from __rfc-editor.org__. All you need is rsync and enough space in `/tmp`. Powered by __Dreams__ and __Pigeons :)__.
+`./gopath`: Setup a user's __$GOPATH__ in an automated fashion.
 
-`./psudo.sh`: The classic fake sudo prompt that logs username:password to /tmp/psudo for easy privellege escalation.
+`./linenum`: Print file contents with line numbers.
+
+`./api-keyring`: Easily store and keep track of your API keys.
+
+`./psudo`: Fake sudo prompt that logs username:password to /tmp/psudo.
+
+`./swap`: Quickly swap the contents of 2 files.
+
+`./template`: Create new files using predefined templates.
+
+`./firewall_skeleton`: A template for creating iptables firewall scripts
+
+`./build_package`: Convert all files in a directory to DOS format and archive them.
+
+`./mac_env`: Clone of the laptop script from thoughtbot that is customized to set up a personal environment for development on a fresh OSX installation.
+
+`./DS_Remove`: Recursively delete all .DS_Store files from a directory structure.
+
+`./lst2list`: Converts lines of a file in to a python list().
+
+`./dl_cn_ranges.sh`: Download a list of IP addresses for a set of countries.
+
+`./syscall_reference`: List the required data for a specific syscall.
+
+`./whois-finder`: Retrieve whois information for a list of hosts.
